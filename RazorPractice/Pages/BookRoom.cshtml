@@ -1,0 +1,47 @@
+﻿@page "{id:int}"
+@model RazorPractice.Pages.BookRoomModel
+@{
+}
+
+<h2>Book Room: @Model.Room?.Name</h2>
+<p>Capacity: @Model.Room?.Capacity | Equipment: @Model.Room?.Equipment</p>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">@Model.ErrorMessage</div>
+}
+
+<form method="post" class="card p-4">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <input type="hidden" asp-for="NewBooking.RoomId" />
+
+    <div class="mb-3">
+        <label class="form-label">Your Name</label>
+        <input asp-for="NewBooking.EmployeeName" class="form-control" required />
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label class="form-label">Start Time</label>
+            <input asp-for="NewBooking.StartTime" 
+                   asp-format="{0:yyyy-MM-ddTHH:mm}"
+                   type="datetime-local" 
+                   class="form-control" required />
+        </div>
+        <div class="col">
+            <label class="form-label">End Time</label>
+            <input asp-for="NewBooking.EndTime" 
+                   asp-format="{0:yyyy-MM-ddTHH:mm}"
+                   type="datetime-local" 
+                   class="form-control" required />
+        </div>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <label class="form-label">Meeting Purpose (Comment)</label>
+        <textarea asp-for="NewBooking.Comment" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Confirm Booking</button>
+    <a asp-page="Rooms" class="btn btn-secondary">Cancel</a>
+</form>

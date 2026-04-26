@@ -1,0 +1,23 @@
+[
+  {
+    "Id": 1,
+    "Name": "Skive office",
+    "Capacity": 25,
+    "Equipment": "Whiteboard",
+    "IsOccupied": false
+  },
+  {
+    "Id": 2,
+    "Name": "Holb\u00E6k office",
+    "Capacity": 50,
+    "Equipment": "Whiteboard",
+    "IsOccupied": false
+  },
+  {
+    "Id": 3,
+    "Name": "Copenhagen Office",
+    "Capacity": 50,
+    "Equipment": "Projector",
+    "IsOccupied": false
+  }
+]

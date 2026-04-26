@@ -1,0 +1,26 @@
+﻿@page
+@model RazorPractice.Pages.AddRoomModel
+@{
+}
+
+<h2>Add New Meeting Room</h2>
+
+<form method="post" class="card p-4 shadow-sm">
+    <div class="mb-3">
+        <label class="form-label">Room Name</label>
+        <input asp-for="NewRoom.Name" class="form-control" placeholder="e.g. London Office" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Capacity</label>
+        <input asp-for="NewRoom.Capacity" type="number" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Equipment</label>
+        <input asp-for="NewRoom.Equipment" class="form-control" placeholder="e.g. Projector, Whiteboard" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Save Room</button>    
+    <a asp-page="Rooms" class="btn btn-secondary">Cancel</a>
+</form>
